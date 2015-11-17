@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Calendar App</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+		<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+		 <script type="text/javascript" src="working.js"></script>
+		<script type="text/javascript" src="pouchdb-5.1.0.min.js"></script>
+       <script type="text/javascript" src="database.js"></script>
+    </head>
+    <body>
+		<div ng-app="CalenderApp" ng-controller="calenderController">
+			<table class="date">
+					<script>calendar();</script>
+			</table>
+		</div></br>
+		<div id = "display">
+		<button id="show">Show Stored Weathers</button>
+		<button id="upload">Today's Weather</button>
+		</div>
+		<div id = "display-area">
+		</div>
+		<script>
+		var app = angular.module('CalenderApp', []);
+		app.controller('calenderController', function($scope, $http) {
+		$http.get("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(2211027)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=")
+		.success(function(response) {$scope.result = response.query;});
+		});
+		</script>
+    </body>
+</html>

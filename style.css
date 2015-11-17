@@ -1,0 +1,32 @@
+.date
+{
+		color:blue;
+        background-color:brown;
+        width:600px;
+		height:492px;
+        margin:auto;
+		padding :10px;
+        
+}
+#display{
+	text-align:center;
+}
+.date th
+{
+		font-size: 22px;
+		color:white;
+        background-color:blue;
+        width:72px;
+}
+
+.date td
+{
+		font-size: 22px;
+		color:red;
+        background-color:black;
+        text-align:center;
+        width:72px;
+        height:72px;
+		padding:5px;
+}
+
